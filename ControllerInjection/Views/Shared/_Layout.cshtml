@@ -4,16 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Scripts.Render("~/bundles/jquery")  
-    @Scripts.Render("~/bundles/jqueryUnobtrusive")
-    @Scripts.Render("~/bundles/jqueryui")
-
-
+    @Scripts.Render("~/bundles/jquery", "~/bundles/jqueryUnobtrusive", "~/bundles/jqueryui")
     @Styles.Render("~/Content/css", "~/Content/Tables/css", "~/Content/themes/base/css")
-
-
-
-
 </head>
 <body style="margin-left:100px;margin-right:100px">
    @RenderBody()
