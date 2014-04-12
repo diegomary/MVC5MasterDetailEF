@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ControllerInjection.Models.EntityFramework.Order>
+<script type="text/javascript">  
+    $(document).ready(function () {
+        $('.datepicker').datepicker({ dateFormat: 'dd-MM-yyyy' });
+    });
+</script>
+<table id="background-image1" summary="Orders Related to selected customer">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShippedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CompanyName)
+        </th>
+               
+    </tr>
+    @{int nrow = 0; string newIdorderdate = "";}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               @{nrow++; newIdorderdate = "orderDate" + nrow.ToString();}
+               @Html.TextBoxFor(modelItem => item.OrderDate, new { @class = "datepicker", id = newIdorderdate })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CompanyName)
+            </td>
+        </tr>
+    }
+
+</table>
+
+

@@ -1,0 +1,19 @@
+﻿
+<script type="text/javascript">
+    $(document).ready(function () {       
+      
+    });
+</script>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Ajax.BeginForm("AllCustomers", "Customers", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "customersdiv", HttpMethod = "GET" }))
+{
+   
+    @Html.TextBox("CustomerName", null, new {style="width:150px"})
+    <input  type="submit" value="Find customers" />                                
+                                   
+}
+<div id="customersdiv" >
+</div>

@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<ControllerInjection.Models.EntityFramework.Customer>
+  <div style="float:left">
+
+    <table id="background-image" summary="Customer resulted from query">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Ajax.ActionLink(item.CompanyName, "OrdersForCustomer", "Orders", new { CompanyName = item.CompanyName }, new AjaxOptions { UpdateTargetId = "ordersContainer", InsertionMode = InsertionMode.Replace, HttpMethod = "GET" })
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div id="ordersContainer" style="float:right"></div>
