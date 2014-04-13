@@ -17,6 +17,7 @@ namespace ControllerInjection.Controllers
         {
             _logger = logger;
         }
+        [Authorize]
         public virtual ActionResult Index()
         {
             _logger.Log("Hello");

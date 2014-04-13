@@ -8,6 +8,10 @@
     @Styles.Render("~/Content/css", "~/Content/Tables/css", "~/Content/themes/base/css")
 </head>
 <body style="margin-left:100px;margin-right:100px">
-   @RenderBody()
+  
+    @Html.Partial("_LoginPartial")
+    <br />    
+    @RenderBody() 
+    @RenderSection("scripts", required: false)
 </body>
 </html>

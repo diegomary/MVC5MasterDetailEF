@@ -15,6 +15,7 @@ namespace ControllerInjection.Controllers
         {
             _ordersRepository = orderRepository;        
         }
+        [Authorize]
         public PartialViewResult OrdersForCustomer(string companyName)
         {
             ViewBag.Test = "This should show as it is in testing";

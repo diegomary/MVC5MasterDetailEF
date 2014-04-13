@@ -16,6 +16,7 @@ namespace ControllerInjection.Controllers
             _customerRepository = customerRepository;        
         }
 
+        [Authorize]
         public PartialViewResult AllCustomers(string CustomerName)
         {
             ViewBag.Test = "This should show as it is in testing";
